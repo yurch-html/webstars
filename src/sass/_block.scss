@@ -44,12 +44,14 @@
     transition: transform $anim;
   }
   
-  &:hover {
-    color: rgba($brand-color, .5);
-    
-    .anchor-aside__helper {
-      opacity: 1;
-      visibility: visible;
+  @media screen  and (min-width: $second-media) {
+    &:hover {
+      color: rgba($brand-color, .5);
+
+      .anchor-aside__helper {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 }
@@ -92,12 +94,14 @@
   color: #fff;
   transition: opacity $anim, color $anim;
   
-  &:hover svg, &:focus svg {
-    stroke-dashoffset: 0;
-  }
-  
   &:active {
     opacity: .8;
+  }
+  
+  @media screen  and (min-width: $second-media) {
+    &:hover svg, &:focus svg {
+      stroke-dashoffset: 0;
+    }
   }
   
   @media screen  and (max-width: $third-media) {
@@ -175,12 +179,14 @@
     .leng-btn {
       background-color: $darkbrand;
       
-      &:hover, &:focus {
-        background-color: $darkbrand;
-      }
-
       &:active {
         background-color: darken($darkbrand, 20%);
+      }
+      
+      @media screen  and (min-width: $second-media) {
+        &:hover, &:focus {
+          background-color: $darkbrand;
+        }
       }
     }
     
@@ -212,12 +218,14 @@
   border-radius: .3em;
   transition: background-color $anim;
   
-  &:hover, &:focus {
-    background-color: $darkbrand;
-  }
-  
   &:active {
     background-color: darken($darkbrand, 20%);
+  }
+  
+  @media screen  and (min-width: $second-media) {
+    &:hover, &:focus {
+      background-color: $darkbrand;
+    }
   }
 }
 
@@ -367,18 +375,20 @@ $title-anim: .7s;
       transition: opacity $anim;
     }
     
-    &:hover, &:focus {
-      background-color: #fff;
-      box-shadow: 0 0 0 2px;
-      color: #4aabff;
-
-      &:before {
-        opacity: 0;
-      }
-    }
-    
     &:active {
       color: darken(#4aabff, 20%);
+    }
+    
+    @media screen  and (min-width: $second-media) {
+      &:hover, &:focus {
+        background-color: #fff;
+        box-shadow: 0 0 0 2px;
+        color: #4aabff;
+
+        &:before {
+          opacity: 0;
+        }
+      }
     }
     
     @media screen  and (max-width: $third-media) {
@@ -405,13 +415,15 @@ $title-anim: .7s;
     line-height: 3;
     color: $white;
     
-    &:hover, 
-    &:focus {
-      background-color: $darkbrand;
-    }
-    
     &:active {
       background-color: darken($darkbrand, 10%);
+    }
+    
+    @media screen  and (min-width: $second-media) {
+      &:hover, 
+      &:focus {
+        background-color: $darkbrand;
+      }
     }
   }
 }
@@ -466,30 +478,32 @@ $mouse-anim: .5s;
       opacity: 1;
     }
     
-    &:hover {
-      .scroll-mouse__hover {
-        width: 100%;
-        height: 100%;
-        border-color: currentColor;
-        background-color: rgba($brand-color, .05);
-      }
-      
-      .scroll-mouse__radius-ico {
-        width: 120%;
-        height: 120%;
-        opacity: 0;
-      }
-      
-      .scroll-mouse__hover-arrow {
-        transition-delay: .5s;
-        transform: translateY(0);
-      }
-    }
-    
     &:active {
       .scroll-mouse__hover {
         transition-delay: 0s;
         background-color: rgba($brand-color, .1);
+      }
+    }
+    
+    @media screen  and (min-width: $second-media) {
+      &:hover {
+        .scroll-mouse__hover {
+          width: 100%;
+          height: 100%;
+          border-color: currentColor;
+          background-color: rgba($brand-color, .05);
+        }
+
+        .scroll-mouse__radius-ico {
+          width: 120%;
+          height: 120%;
+          opacity: 0;
+        }
+
+        .scroll-mouse__hover-arrow {
+          transition-delay: .5s;
+          transform: translateY(0);
+        }
       }
     }
   }
@@ -704,9 +718,11 @@ $mouse-anim: .5s;
     opacity: 0;
   }
   
-  &:hover, &:focus {
-    & ~ .input-item__text {
-      color: inherit;
+  @media screen  and (min-width: $second-media) {
+    &:hover, &:focus {
+      & ~ .input-item__text {
+        color: inherit;
+      }
     }
   }
 }

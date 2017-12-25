@@ -100,14 +100,6 @@
   white-space: nowrap;
   transition: color $anim;
   
-  &:hover, &:focus {
-    color: $darkbrand;
-    
-    .contact-item__ico {
-      color: $darkbrand;
-    }
-  }
-  
   &:active {
     color: darken($darkbrand, 20%);
     
@@ -116,11 +108,19 @@
     }
   }
   
-  
-  
   &.contact-item--mail {
     .contact-item__text {
       font-size: 0.7em;
+    }
+  }
+  
+  @media screen  and (min-width: $second-media) { 
+    &:hover, &:focus {
+      color: $darkbrand;
+
+      .contact-item__ico {
+        color: $darkbrand;
+      }
     }
   }
   
@@ -153,12 +153,14 @@
   color: $brand-color;
   transition: color $anim;
   
-  &:hover, &:focus {
-    color: $darkbrand;
-  }
-
   &:active {
     color: darken($darkbrand, 20%);
+  }
+  
+  @media screen  and (min-width: $second-media) {
+    &:hover, &:focus {
+      color: $darkbrand;
+    }
   }
   
   @media screen and (max-width: $first-media) {
@@ -389,15 +391,24 @@
   position: relative;
   display: block;
   padding: 1.55em 1.2em;
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size:  0 2px;
-  background-repeat: no-repeat;
-  background-position: left 1.2em bottom 1em;
   white-space: nowrap;
-  transition: background-size $anim, opacity $anim;
+  transition: opacity $anim;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    left: 1.2em;
+    bottom: 1em;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width $anim;
+  }
 
   &:hover, &:focus {
-    background-size:  1.778em 2px;
+    &:before {
+      width: 1.778em;
+    }
   }
   
   &:active {
@@ -407,15 +418,26 @@
   @media screen and (max-width: $second-media) {
     padding: .7em 1.2em;
     background-position: center bottom;
+    
+    &:before {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
   }
 }
 
 .main-menu__item.active {
   .main-menu__link {
-    background-size:  1.778em 2px;
-    
+    &:before {
+      width: 1.778em;
+    }
+   
     @media screen and (max-width: $second-media) {
-      background-size:  5.5em 2px;
+      &:before {
+        width: 5.5em;
+      }
     }
   }
 }
@@ -481,13 +503,13 @@
   padding-right: .5em;
   transition: color $anim;
   
-  &:hover {
+  &:active {
+    color: darken($darkbrand, 20%);
+  }
+  
+  @media screen  and (min-width: $second-media) { 
     &:hover, &:focus {
       color: $darkbrand;
-    }
-
-    &:active {
-      color: darken($darkbrand, 20%);
     }
   }
 }

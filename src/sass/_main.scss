@@ -390,15 +390,17 @@ $anim-bg: .3s;
   }
   
   @media screen and (min-width: $second-media) {
-    &:hover {
-      .circ-item__title {
-        color: $brand-color;
-      }
-    }
-
     &:active {
       .circ-item__title, .circ-item__count {
         color: $darkbrand;
+      }
+    }
+    
+    @media screen  and (min-width: $second-media) {
+      &:hover {
+        .circ-item__title {
+          color: $brand-color;
+        }
       }
     }
   }
@@ -508,10 +510,12 @@ $anim-bg: .3s;
   display: block;
   padding-bottom: 80%;
   
-  &:hover {
-    .portfolio-item__shade,
-    .portfolio-item__video {
-      opacity: 1;
+  @media screen  and (min-width: $second-media) {
+    &:hover {
+      .portfolio-item__shade,
+      .portfolio-item__video {
+        opacity: 1;
+      }
     }
   }
 }
@@ -564,10 +568,6 @@ $anim-bg: .3s;
   color: $brand-color;
   transition: color $anim;
   
-  &:hover, &:focus {
-    color: $darkbrand;
-  }
-  
   &:active {
     color: darken($darkbrand, 10%);
   }
@@ -575,6 +575,12 @@ $anim-bg: .3s;
   &.load {
     .add-portfolio__ico {
       animation: 1.5s load linear infinite;
+    }
+  }
+  
+  @media screen  and (min-width: $second-media) {
+    &:hover, &:focus {
+      color: $darkbrand;
     }
   }
 }
@@ -840,14 +846,16 @@ $anim-bg: .3s;
   cursor: pointer;
   transition: opacity $anim;
   
-  &:hover {
-    .input-file__text {
-      border-bottom-style: solid;
-    }
-  }
-  
   &:active {
     opacity: .7;
+  }
+  
+  @media screen  and (min-width: $second-media) {
+    &:hover {
+      .input-file__text {
+        border-bottom-style: solid;
+      }
+    }
   }
 }
 
@@ -1108,16 +1116,18 @@ $anim-bg: .3s;
 
 .personal-item {
   text-align: center;
-  
-  &:hover {
-    .full-pic {
-      clip-path: polygon(50% 0%, 68% 36%, 100% 40%, 75% 63%, 90% 100%, 51% 82%, 10% 100%, 24% 63%, 0 40%, 32% 36%);
-      transform: scale(1.2);
-      border-radius: 0;
-    }
-    
-    .personal-item__name:before {
-      height: 20px;
+
+  @media screen  and (min-width: $second-media) {
+    &:hover {
+      .full-pic {
+        clip-path: polygon(50% 0%, 68% 36%, 100% 40%, 75% 63%, 90% 100%, 51% 82%, 10% 100%, 24% 63%, 0 40%, 32% 36%);
+        transform: scale(1.2);
+        border-radius: 0;
+      }
+
+      .personal-item__name:before {
+        height: 20px;
+      }
     }
   }
 }
