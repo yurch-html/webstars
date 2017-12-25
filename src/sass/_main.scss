@@ -9,7 +9,7 @@
   }
 }
 
-$anim-bg: .5s;
+$anim-bg: .3s;
 .top-section__desc {
   position: relative;
   display: flex;
@@ -785,6 +785,14 @@ $anim-bg: .5s;
 .form-main__btn {
   display: flex;
   justify-content: space-between;
+  
+  @media screen and (max-width: $fourth-media) {
+   display: block;
+    
+    .input-file {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 //.form-sect
@@ -794,6 +802,10 @@ $anim-bg: .5s;
   background-attachment: fixed;
   background-position: 50% center;
   color: $white;
+}
+
+.form-main {
+  font-size: 1rem;
 }
 
 .form-main__inputs {
@@ -808,6 +820,14 @@ $anim-bg: .5s;
   margin-bottom: 10px;
   
   &.form-main__item--area {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: $second-media) {
+    width: 50%;
+  }
+  
+  @media screen and (max-width: $fourth-media) {
     width: 100%;
   }
 }
@@ -875,6 +895,14 @@ $anim-bg: .5s;
   width: 25%;
   padding: 0 15px;
   margin-bottom: 30px;
+  
+  @media screen and (max-width: $second-media) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: $fourth-media) {
+    width: 100%;
+  }
 }
 
 .price-item {
@@ -943,21 +971,46 @@ $anim-bg: .5s;
 .comment-slider-item {
   display: flex;
   font-size: 1rem;
+  
+  @media screen and (max-width: $second-media) {
+    position: relative;
+  }
 }
 
 .comment-slider-item__bord {
   box-sizing: content-box;
   width: 50% ;
   padding-right: 2.6em;
+  
+  @media screen and (max-width: $second-media) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    height: 100%;
+    opacity: .4;
+    padding: 0;
+  }
 }
 
 .comment-slider-item__desc {
   width: calc( 50% - 2.6em );
+  
+  @media screen and (max-width: $second-media) {
+    z-index: 7;
+    width: 100%;
+    padding-bottom: 4em;
+  }
 }
 
 .comment-slider-item__img-wp {
   position: relative;
   padding-bottom: 72%;
+  
+  @media screen and (max-width: $second-media) {
+    height: 100%;
+    padding: 0;
+  }
 }
 
 .comment-slider-item__data {
@@ -1043,6 +1096,14 @@ $anim-bg: .5s;
   width: 16.66%;
   padding: 0 15px;
   margin-bottom: 3em;
+  
+  @media screen and (max-width: $second-media) {
+    width: 20%;
+  }
+  
+  @media screen and (max-width: $third-media) {
+    width: 33.33%;
+  }
 }
 
 .personal-item {
@@ -1074,6 +1135,11 @@ $anim-bg: .5s;
     clip-path: polygon(50% 0%, 100% 0, 100% 39%, 100% 65%, 100% 100%, 55% 100%, 0 100%, 0 66%, 0 41%, 0 0);
     transition: clip-path $anim, border-radius $anim, transform $anim;
     will-change: transform;
+    
+    @media screen and (max-width: $second-media) {
+      clip-path: polygon(50% 0%, 68% 36%, 100% 40%, 75% 63%, 90% 100%, 51% 82%, 10% 100%, 24% 63%, 0 40%, 32% 36%);
+      border-radius: 0;
+    }
   }
 }
 
@@ -1130,6 +1196,10 @@ $anim-bg: .5s;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
+    @media screen and (max-width: $second-media) {
+      display: block;
+    }
   }
 }
 
@@ -1138,11 +1208,20 @@ $anim-bg: .5s;
   max-width: 700px;
   padding-left: 20px;
   color: #fff;
+  
+  @media screen and (max-width: $second-media) {
+    padding-top: 15px;
+    padding-left: 0;
+  }
 }
 
 .footer-menu {
   display: flex;
   justify-content: space-between;
+  
+  @media screen and (max-width: $fourth-media) {
+    display: block;
+  }
 }
 
 .footer-menu__link {

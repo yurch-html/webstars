@@ -725,6 +725,27 @@ $mouse-anim: .5s;
   transition: opacity $anim, color $anim;
 }
 
+//.preloader 
+body {
+  overflow: hidden;
+  
+  &.load {
+    overflow: visible;
+  }
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+}
 
 
 
